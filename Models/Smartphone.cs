@@ -3,12 +3,19 @@ namespace DesafioPOO.Models
     public abstract class Smartphone
     {
         public string Numero { get; set; }
-        // TODO: Implementar as propriedades faltantes de acordo com o diagrama
 
-        public Smartphone(string numero)
+        // Optei por usar private para seguir o diagrama (simbolo "-"), já que o simbolo para protected seria "#". 
+        // O efeito colateral é que, por se tratar de uma classe abstrata (não pode ser instanciada) e esses campos não serem utilizado aqui na classe pai, ninguem terá acesso a esses campos
+        private string Modelo { get; set; }
+        private string IMEI { get; set; }
+        private int Memoria { get; set; }
+
+        public Smartphone(string numero, string modelo, string imei, int memoria)
         {
             Numero = numero;
-            // TODO: Passar os parâmetros do construtor para as propriedades
+            Modelo = modelo;
+            IMEI = imei;
+            Memoria = memoria;
         }
 
         public void Ligar()
